@@ -11,5 +11,4 @@ public class Room : ScriptableObject
     public Exit[] exits;
 
     public InteractableObjects[] interactableObjects;
-    public InteractableObjects[] objectsCurrentlyInRoom;
 }
