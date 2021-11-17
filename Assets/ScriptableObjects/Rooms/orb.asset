@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8590872910f1e4c8d253824a10fe96, type: 3}
+  m_Name: orb
+  m_EditorClassIdentifier: 
+  roomName: orb
+  description: You arrive to a vast, dark hall.
+  exits:
+  - directionNoun: south
+    exitDescription: There is a door to the south.
+    valueRoom: {fileID: 11400000, guid: 8c39447b40816fc40948035c19133301, type: 2}
+  - directionNoun: east
+    exitDescription: There is a whole in the east wall where you could fit.
+    valueRoom: {fileID: 11400000, guid: 0cd5bf46b69171c418ca939131e035da, type: 2}
+  interactableObjects:
+  - {fileID: 11400000, guid: 506c7a64920f7fb4ca986b9f8e58dcee, type: 2}

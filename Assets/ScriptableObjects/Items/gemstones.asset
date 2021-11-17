@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 644eb866c59599e4abcc30a5982677ea, type: 3}
+  m_Name: gemstones
+  m_EditorClassIdentifier: 
+  noun: gemstones
+  objectDescription: The only thing you can find here are a couple of gemstones.
+  interactions:
+  - inputAction: {fileID: 11400000, guid: c1e33b1c8767fe8449d40c612edbdbd1, type: 2}
+    textResponse: On a closer inspection, the gemstones appear to be carved in the
+      shape of human eyes.
+    actionResponse: {fileID: 0}
+  - inputAction: {fileID: 11400000, guid: 97b3fb2abfe1e9947a9f137f6c4063db, type: 2}
+    textResponse: You take the gemstones.
+    actionResponse: {fileID: 0}
