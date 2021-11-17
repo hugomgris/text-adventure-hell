@@ -9,4 +9,6 @@ public class InteractableObjects : ScriptableObject
     public string objectDescription = "description displayed in room";
 
     public Interaction[] interactions;
+
+    public bool isTaken = false;
 }

@@ -24,3 +24,4 @@ MonoBehaviour:
   - inputAction: {fileID: 11400000, guid: 224d80908096a4441a7fd1949f2c42ea, type: 2}
     textResponse: You used the skull.
     actionResponse: {fileID: 11400000, guid: 9814fd4952e4cd44490dff4d8d55e049, type: 2}
+  isTaken: 0

@@ -6,6 +6,7 @@ public class ItemManager : MonoBehaviour
 {
     [HideInInspector] public GameController controller;
     public List<InteractableObjects> usableItemList = new List<InteractableObjects>();
+    public List<Room> totalGameRooms = new List<Room>();
     public Dictionary<string, string> examineDictionary = new Dictionary<string, string>();
     public Dictionary<string, string> takeDictionary = new Dictionary<string, string>();
     [HideInInspector] public List<string> nounsInRoom = new List<string>();
@@ -17,6 +18,13 @@ public class ItemManager : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<GameController>();
+        for (int i = 0; i < totalGameRooms.Count; i++)
+        {
+            for (int j = 0; j < totalGameRooms[i].interactableObjects.Length; j++)
+            {
+                totalGameRooms[i].interactableObjects[j].isTaken = false;
+            }
+        }
     }
 
     public string GetObjectsNotInInventory(Room currentRoom, int i)
@@ -24,8 +32,11 @@ public class ItemManager : MonoBehaviour
         InteractableObjects interactableObjectInRoom = currentRoom.interactableObjects[i];
         if (!nounsInInventory.Contains(interactableObjectInRoom.noun))
         {
+            if (interactableObjectInRoom.isTaken == false)
+            { 
             nounsInRoom.Add(interactableObjectInRoom.noun);
             return interactableObjectInRoom.objectDescription;
+            }
         }
         return null;
     }
@@ -37,6 +48,13 @@ public class ItemManager : MonoBehaviour
         {
             nounsInRoom.Remove(noun);
             nounsInInventory.Add(noun);
+            for (int i = 0; i < controller.roomNavigation.currentRoom.interactableObjects.Length; i++)
+            {
+                if(controller.roomNavigation.currentRoom.interactableObjects[i].noun==noun)
+                {
+                    controller.roomNavigation.currentRoom.interactableObjects[i].isTaken = true;
+                }
+            }
             AddActionResponsesToUseDictionary();
             return takeDictionary;
         }
@@ -45,6 +63,17 @@ public class ItemManager : MonoBehaviour
             controller.LogStringWithReturn($"There is no {noun} here to take, bro.");
             return null;
         }
+    }
+
+    public void DestroyNounInInventory(string[] separatedInputWords)
+    {
+        string noun = separatedInputWords[1];
+        if (nounsInInventory.Contains(noun))
+        {
+            nounsInInventory.Remove(noun);
+        }
+        else
+            controller.LogStringWithReturn($"There is no {noun} in your inventory to destroy");
     }
 
 
@@ -141,7 +170,7 @@ public class ItemManager : MonoBehaviour
  * 4. Ver cómo controlar qué objetos son combinables y con qué pueden combinarse.
  * 5. Ver cómo manejar lo de poblar *algo* con la actionResponse de Combine (al estilo Use).
  * 
- * I. Quizá una manera más sencilla de hacer esto sea mediante un InputAction que sea simplemente combine que lance un mensaje para pedir los objetos a combinar.
+ * I. Quizá una manera más sencilla de hacer esto sea mediante un InputAction que sea simplemente combine que lance un mensaje para pedir24 los objetos a combinar.
  *          En plan. Combine. Please select first object. Please select second object. Y luego hacer lo de los nounsInInventory. 
  *          Lo que no sé es si la arquitectura de este código permite hacer eso. Y si lo permite, cómo construirlo xd
  */

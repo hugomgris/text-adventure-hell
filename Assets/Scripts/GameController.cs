@@ -36,11 +36,11 @@ public class GameController : MonoBehaviour
         UnpackRoom();
         PrepareObjectsToTakeOrExamine(roomNavigation.currentRoom);
         string joinedInteractionDescriptions = string.Join("\n", interactionDescriptionsInRoom.ToArray());
-        string combinedText = roomNavigation.currentRoom.description + "\n" + joinedInteractionDescriptions;
+        string combinedText = roomNavigation.currentRoom.description + "\n" + joinedInteractionDescriptions + "\n";
         LogStringWithReturn(combinedText);
         for (int i = 0; i < roomNavigation.currentRoom.interactableObjects.Length; i++)
         {
-            Debug.Log(roomNavigation.currentRoom.interactableObjects[i]);
+            Debug.Log(roomNavigation.currentRoom.interactableObjects[i].isTaken);
         }
         
     }
