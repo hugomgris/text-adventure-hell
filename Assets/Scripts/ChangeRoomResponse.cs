@@ -10,6 +10,7 @@ public class ChangeRoomResponse : ActionResponse
     {
         if (controller.roomNavigation.currentRoom.roomName == requiredString)
         {
+            controller.LogStringWithReturn("You used the item");
             controller.roomNavigation.currentRoom = roomToChangeTo;
             controller.DisplayRoomText();
             return true;

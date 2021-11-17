@@ -7,12 +7,12 @@ public class ItemManager : MonoBehaviour
     [HideInInspector] public GameController controller;
     public List<InteractableObjects> usableItemList = new List<InteractableObjects>();
     public List<Room> totalGameRooms = new List<Room>();
+    [HideInInspector] public List<string> nounsInRoom = new List<string>();
+    [HideInInspector] public List<string> nounsInInventory = new List<string>();
     public Dictionary<string, string> examineDictionary = new Dictionary<string, string>();
     public Dictionary<string, string> takeDictionary = new Dictionary<string, string>();
-    [HideInInspector] public List<string> nounsInRoom = new List<string>();
-
-    List<string> nounsInInventory = new List<string>();
-    Dictionary<string, ActionResponse> useDictionary = new Dictionary<string, ActionResponse>();
+    public Dictionary<string, ActionResponse> useDictionary = new Dictionary<string, ActionResponse>();
+    public Dictionary<string, ActionResponse> combineDictionary = new Dictionary<string, ActionResponse>();
 
 
     private void Awake()
@@ -55,7 +55,7 @@ public class ItemManager : MonoBehaviour
                     controller.roomNavigation.currentRoom.interactableObjects[i].isTaken = true;
                 }
             }
-            AddActionResponsesToUseDictionary();
+            AddActionResponsesToDictionaries();
             return takeDictionary;
         }
         else
@@ -91,7 +91,7 @@ public class ItemManager : MonoBehaviour
             controller.LogStringWithReturn("Your backpack is empty, bro.");
     }
 
-    public void AddActionResponsesToUseDictionary()
+    public void AddActionResponsesToDictionaries()
     {
         for (int i = 0; i < nounsInInventory.Count; i++)
         {
@@ -112,11 +112,23 @@ public class ItemManager : MonoBehaviour
                     continue;
                 }
 
-                if (!useDictionary.ContainsKey(noun))
-                {
+                if (interaction.actionResponse.actionKey == "use") 
+                    { 
+                    
+                    if (!useDictionary.ContainsKey(noun))
+                    {
                         useDictionary.Add(noun, interaction.actionResponse);
+                    }
+                    }
+
+                if (interaction.actionResponse.actionKey == "combine")
+                    {
+                        if (!combineDictionary.ContainsKey(noun))
+                        {
+                            combineDictionary.Add(noun, interaction.actionResponse);
+                        }
+                    }
                 }
-            }
         }
     }
 
@@ -137,6 +149,7 @@ public class ItemManager : MonoBehaviour
         nounsInRoom.Clear();
         examineDictionary.Clear();
         takeDictionary.Clear();
+        combineDictionary.Clear();
     }
 
     public void UseItem(string[] separatedInputWords)
@@ -157,6 +170,26 @@ public class ItemManager : MonoBehaviour
         }
         else
             controller.LogStringWithReturn($"You don't have a {nounToUse} to use.");
+    }
+
+    public void CombineItems(string[] separatedInputWords)
+    {
+        string noun1 = separatedInputWords[1];
+        string noun2 = separatedInputWords[3];
+
+        if (nounsInInventory.Contains(noun1) && nounsInInventory.Contains(noun2))
+        {
+            if (combineDictionary.ContainsKey(noun1) && combineDictionary.ContainsKey(noun2))
+            {
+                bool actionResult = combineDictionary[noun1].DoActionResponse(controller);
+                if (!actionResult)
+                {
+                    controller.LogStringWithReturn("fallo tipo 1");
+                }
+            }else
+            controller.LogStringWithReturn("fallo tipo 2");
+        }else
+            controller.LogStringWithReturn("fallo tipo 3");
     }
 }
 

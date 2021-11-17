@@ -21,7 +21,7 @@ MonoBehaviour:
   - inputAction: {fileID: 11400000, guid: 97b3fb2abfe1e9947a9f137f6c4063db, type: 2}
     textResponse: You took the skull.
     actionResponse: {fileID: 0}
-  - inputAction: {fileID: 11400000, guid: 224d80908096a4441a7fd1949f2c42ea, type: 2}
-    textResponse: You used the skull.
-    actionResponse: {fileID: 11400000, guid: 9814fd4952e4cd44490dff4d8d55e049, type: 2}
-  isTaken: 0
+  - inputAction: {fileID: 11400000, guid: 8122da2e08b4534499518c93d319d927, type: 2}
+    textResponse: You combined the skull with the gemstones
+    actionResponse: {fileID: 11400000, guid: 7694b403096961140a95a1e1eab49a34, type: 2}
+  isTaken: 1

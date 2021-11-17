@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568d3c6926617dc4ea7184fffbd213a8, type: 3}
+  m_Name: CombineSkullWithGemstonesResponse
+  m_EditorClassIdentifier: 
+  requiredString: gemstones
+  actionKey: combine
+  object1: {fileID: 11400000, guid: 506c7a64920f7fb4ca986b9f8e58dcee, type: 2}
+  object2: {fileID: 11400000, guid: fc31a0890c84f1b4ca021a1e2632595c, type: 2}
+  combinationResult: {fileID: 11400000, guid: 339f0eafa6638604ba9e25a7ffbf6238, type: 2}

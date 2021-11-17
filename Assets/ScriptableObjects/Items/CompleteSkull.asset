@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 644eb866c59599e4abcc30a5982677ea, type: 3}
+  m_Name: CompleteSkull
+  m_EditorClassIdentifier: 
+  noun: ornament
+  objectDescription: 
+  interactions:
+  - inputAction: {fileID: 11400000, guid: 224d80908096a4441a7fd1949f2c42ea, type: 2}
+    textResponse: A cloud of dust sweeps the room.
+    actionResponse: {fileID: 11400000, guid: 9814fd4952e4cd44490dff4d8d55e049, type: 2}
+  isTaken: 0

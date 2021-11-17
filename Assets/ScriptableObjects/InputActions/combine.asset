@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 534fc2d804eecc047a6da82481982d35, type: 3}
-  m_Name: changeRoomResponse
+  m_Script: {fileID: 11500000, guid: 5ffa2048e5156bc4ca6d51e9cfdc15dc, type: 3}
+  m_Name: combine
   m_EditorClassIdentifier: 
-  requiredString: orb
-  actionKey: use
-  roomToChangeTo: {fileID: 11400000, guid: ba2dcd5d75cf6a04083fc5929da93876, type: 2}
+  keyString: combine

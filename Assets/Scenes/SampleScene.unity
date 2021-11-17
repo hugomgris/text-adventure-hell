@@ -821,6 +821,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 97b3fb2abfe1e9947a9f137f6c4063db, type: 2}
   - {fileID: 11400000, guid: 224d80908096a4441a7fd1949f2c42ea, type: 2}
   - {fileID: 11400000, guid: 3199f56baf314c04db68ec6416a4f754, type: 2}
+  - {fileID: 11400000, guid: 8122da2e08b4534499518c93d319d927, type: 2}
 --- !u!114 &1169127158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,6 +850,8 @@ MonoBehaviour:
   controller: {fileID: 0}
   usableItemList:
   - {fileID: 11400000, guid: 506c7a64920f7fb4ca986b9f8e58dcee, type: 2}
+  - {fileID: 11400000, guid: fc31a0890c84f1b4ca021a1e2632595c, type: 2}
+  - {fileID: 11400000, guid: 339f0eafa6638604ba9e25a7ffbf6238, type: 2}
   totalGameRooms:
   - {fileID: 11400000, guid: 8c39447b40816fc40948035c19133301, type: 2}
   - {fileID: 11400000, guid: 366d367cacfe78645807ad66b02e799c, type: 2}
@@ -856,6 +859,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ba2dcd5d75cf6a04083fc5929da93876, type: 2}
   - {fileID: 11400000, guid: 03d360006f61f1c409d3a736284e739b, type: 2}
   nounsInRoom: []
+  nounsInInventory: []
 --- !u!1 &1703521534
 GameObject:
   m_ObjectHideFlags: 0
