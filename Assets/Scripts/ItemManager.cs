@@ -193,17 +193,3 @@ public class ItemManager : MonoBehaviour
     }
 }
 
-
-/*
- * Para hacer el combine tendríamos que tener en cuenta las siguientes movidas:
- * 1. La sintaxis, que ahora sería de 4 palabras: Combine X with Y. Tirar un mensaje de error que lo especifique si esas palabras no son las de la separatedInputWords.
- * 2. Ver cómo carajo hacemos una ActionResponse que genere un objeto combinado y lo meta en el inventario. También que elimine los componentes de mismo.
- *          Es decir: sacar de nounsInInventory la skull y las gemstones y meter una eyedskull o algo así.
- * 3. Ver cuáles son los chequeos a pasar: cuál es la requiredString y cómo construir los loops para comprobar que se cumplen los requisitos.
- * 4. Ver cómo controlar qué objetos son combinables y con qué pueden combinarse.
- * 5. Ver cómo manejar lo de poblar *algo* con la actionResponse de Combine (al estilo Use).
- * 
- * I. Quizá una manera más sencilla de hacer esto sea mediante un InputAction que sea simplemente combine que lance un mensaje para pedir24 los objetos a combinar.
- *          En plan. Combine. Please select first object. Please select second object. Y luego hacer lo de los nounsInInventory. 
- *          Lo que no sé es si la arquitectura de este código permite hacer eso. Y si lo permite, cómo construirlo xd
- */

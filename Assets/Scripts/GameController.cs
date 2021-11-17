@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     [HideInInspector] public List<string> actionLog = new List<string>();
     [HideInInspector] public List<string> interactionDescriptionsInRoom = new List<string>();
     [HideInInspector] public ItemManager itemManager;
+    [HideInInspector] public TypeSoundsPlayer soundPlayer;
     public Text displayText;
     public InputAction[] inputActions;
 
@@ -17,6 +18,25 @@ public class GameController : MonoBehaviour
     {
         roomNavigation = GetComponent<RoomNavigation>();
         itemManager = GetComponent<ItemManager>();
+        soundPlayer = GetComponent<TypeSoundsPlayer>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("backspace"))
+        {
+            soundPlayer.PlayBackspaceKeySound();
+        }
+
+        if (Input.GetKeyDown("return"))
+        {
+            soundPlayer.PlayReturnKeySound();
+        }
+
+        if (Input.anyKeyDown)
+        {
+            soundPlayer.PlayRegularKeySound();
+        }
     }
 
     private void Start()
